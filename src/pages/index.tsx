@@ -4,6 +4,7 @@ import { type NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import type { FormEvent } from "react";
 import { useState } from "react";
+import { GmailButton } from "../components/GmailButton";
 import { api } from "../utils/api";
 
 const Form = () => {
@@ -103,9 +104,12 @@ const Home: NextPage = () => {
               </div>
             </>
           ) : (
-            <button onClick={() => handleLoginClick()}>
-              Login with discord
-            </button>
+            <>
+              <button onClick={() => handleLoginClick()}>
+                Login with discord
+              </button>
+              <GmailButton />
+            </>
           )}
         </div>
       </div>
